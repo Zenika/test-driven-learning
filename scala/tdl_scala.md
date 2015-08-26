@@ -2,15 +2,15 @@
 
 ## Environnement
 
-La première étape consiste à installer son environnement de travail. Pour cela Nous allons utiliser **sbt** (Simple Build Tool).
+La première étape consiste à installer son environnement de travail. Pour cela nous allons utiliser **sbt** (Simple Build Tool).
 
-Cet outil est comparable à Maven avec un approche différente sur certains points. Nous n'allons pas rentrer dans ces détails pour le moment. Il nous permettra de nous concentrer sur l'apprentissage du language Scala.
+Cet outil est comparable à Maven avec une approche différente sur certains points. Nous n'allons pas rentrer dans ces détails pour le moment. Il nous permettra de nous concentrer sur l'apprentissage du language Scala.
 
 ### Installation
 
 Pour installer sbt, je vous propose de suivre la documentation officielle (qui couvre l'ensemble des OS) : [Documentation officielle](http://www.scala-sbt.org/0.13/tutorial/Setup.html)
 
->En passant par sbt, il n'est pas nécessaire d'installer explicitement un SDK Scala, celui-ci est fournit par sbt
+>En passant par sbt, il n'est pas nécessaire d'installer explicitement un SDK Scala, celui-ci est fourni par sbt
 
 Pour valider l'installation de sbt, taper dans la console les commandes suivantes : 
 
@@ -30,11 +30,36 @@ A l'invit de commande **scala>** taper le code suivant :
 	Hello World
 
 Si vous obtenez le résultat ci-dessus alors c'est que tout est en ordre et que l'on peut passer à la suite.
+
+Nous avons ici utilisé le REPL disponible avec le language Scala (*sbt console*). Le REPL permet de pouvoir exécuter à la volée du code. 
+
+Par exemple, à l'aide du REPL on peut tester la création d'une fonction **add** qui a pour objectif d'ajouter 1 à l'entier passé en paramètre. Pour celà, on exécute successivement les commandes suivantes : 
+
+Lancement du REPL
+
+	sbt console
+
+Création d'une variable i de type Int initialisée avec la valeur 2
 	
+
+	scala> val i:Int = 2
+	i: Int = 2
+	
+Création de la fonction add
+	
+
+	scala> def add:Int=>Int = a=>a+1
+	add: Int => Int
+	
+Utilisation de la fonction add
+
+	scala> add(i)
+	res1: Int = 3
+
 
 ### Création du projet : tdl-scala
 
-Sbt suit les même convention que Maven en terme de structure de projet. Nous allons donc créer la structure minimale de répertoire pour nous permettre l'écriture d'un test.
+Sbt suit les mêmes convention que Maven en terme de structure de projet. Nous allons donc créer la structure minimale de répertoire pour nous permettre l'écriture d'un test.
 
 Première étape création du répertoire racine du projet : **tdl-scala**
 Ensuite, il faut créer la structure (minimale) suivante :
@@ -62,7 +87,7 @@ Maintenant, il faut fournir le descripteur de projet à sbt. Ce fichier se nomme
 		build.sbt
 	
 
-Voila notre environnement est prêt pour commencer à travailler, enfin presque. Il faut maintenant compléter le fichier build.sbt avec quelques informations.
+Voilà notre environnement est prêt pour commencer à travailler, enfin presque. Il faut maintenant compléter le fichier build.sbt avec quelques informations.
 
 ### build.sbt
 
@@ -87,7 +112,7 @@ La dépendance ajoutée au projet est la librairie standard permettant d'écrire
 
 ## Première application : Hello World
 
-Traditionnellement, nous allons commencer par écrire notre premier application qui aura pour objectif d'afficher le message :
+Traditionnellement, nous allons commencer par écrire notre première application qui aura pour objectif d'afficher le message :
 
 	Hello world
 	
@@ -107,7 +132,7 @@ Maintenant, vous pouvez lancer la commande
 	
 	>sbt run
 	
-Vous devriez obtenir l'affichage du message (avec des informations supplémentaire :
+Vous devriez obtenir l'affichage du message (avec des informations supplémentaire) :
 	
 	Hello world
 
@@ -117,7 +142,7 @@ Votre environnement est prêt. Prochaine étape écrire un test
 
 ## Premier test
 
-Aujourd'hui, savoir coder c'est savoir tester son code.  Nous allons voir comment écrire une test en Scala. Pour cela nous allons utiliser la librairie **ScalaTest**. Cette librairie fournit une API très complète permettant d'écrire des tests selon une approche **Behavior-Driven Development** (BDD)
+Aujourd'hui, savoir coder c'est savoir tester son code.  Nous allons voir comment écrire un test en Scala. Pour cela nous allons utiliser la librairie **ScalaTest**. Cette librairie fournit une API très complète permettant d'écrire des tests selon une approche **Behavior-Driven Development** (BDD)
 Dans ce premier exemple, nous allons utiliser *FunSuite*. Une version très proche d'un test Junit. Nous verrons plus tard l'ensemble des possibilités de la librairie sur une approche BDD.
 
 Créez le fichier suivant : 
@@ -137,7 +162,7 @@ et compléter le avec le code suivant :
 	}
 ```
 
-Une fois le fichier sauvegardé, lancé la commande : 
+Une fois le fichier sauvegardé, lancre la commande : 
 
 	>sbt test
 
@@ -150,6 +175,13 @@ Vous devriez obtenir le message suivant :
 	[info] Suites: completed 1, aborted 0
 	[info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
 	[info] All tests passed.
+	
+## Conclusion
+
+Suite aux différentes étapes ci-dessus, nous avons à disposition un environnement opérationnel. Il nous permet d'écrire du code Scala, de l'exécuter et enfin de le tester.
+Notons que nous avons utiliser également le REPL
+
+
 
 
 
