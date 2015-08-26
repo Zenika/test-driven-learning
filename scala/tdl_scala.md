@@ -179,7 +179,7 @@ Vous devriez obtenir le message suivant :
 ## Conclusion
 
 Suite aux différentes étapes ci-dessus, nous avons à disposition un environnement opérationnel. Il nous permet d'écrire du code Scala, de l'exécuter et enfin de le tester.
-Notons que nous avons utiliser également le REPL
+Notons que nous avons utiliser également le REPL qui nous permet de pouvoir rapidement explorer avec le language
 
 
 
