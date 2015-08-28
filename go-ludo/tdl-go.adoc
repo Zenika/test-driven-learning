@@ -137,6 +137,41 @@ Voilà je me sens prét à commencer. Je ne connais pas encore le langage mais j
 
 == IDE
 
+Pour pouvoir écrire un code, un bon outil c'est important.
+
+Donc je suis parti à la recherche d'un IDE pour Go.
+
+Premier test avec mes IDE habituels, ca oui j'utilise plusieurs IDE.
+
+Donc j'ouvre Brackets, IntelliJ et Eclipse à la recherche du support langage.
+
+Je ne trouve rien de très pertinent.
+
+Je suppose que VIM doit avoir un support mais n'étant pas un grand habitué de cet éditeur je décide continuer à chercher.
+
+Je me retrouve sur le site officiel puis le GitHub et je trouve cette page :
+
+- https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins
+
+Je décide donc de tester https://github.com/visualfc/liteide[LiteIDE].
+Super autocomplétion des libraries, le style de l'IDE est moche mais bon si va bien c'est OK.
+Mais *fail* car le support du clavier est destiné uniquement au clavier QWERTY.
+
+Donc c'est reparti pour tester un nouvel IDE.
+
+J'avais déjà https://atom.io[Atom] d'installé donc je regarde les plugins disponible et supprise :
+
+- {atom-package-uri}/language-go[language-go]
+- {atom-package-uri}/go-plus[go-plus] : `apm install go-plus`
+
+`language-go` permet le support de la coloration syntaxique de Go.
+
+`go-plus` permet d'avoir de l'autocomplétion, le formatteur officiel, du linting et donne un retour visuel des erreurs de syntaxe. Un super plugin !
+
+`go-plus` necessite l'installation de {github-uri}/nsf/gocode[Gocode] pour l'autocompletion.
+
+J'ai donc arreté mon choix sur Atom.
+
 
 == Le langage
 
