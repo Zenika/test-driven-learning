@@ -44,6 +44,31 @@ J'ai trouvé 4 points d'entrées qui m'ont semblé pertinent :
 
 == La structure
 
+La question de base pour commencer correctement avec un langage c'est la structure d'un projet. Pour Go, il a été facile de trouver cela sur le officiel : {golang-doc-uri}/code.html
+
+....
+├── bin/
+│   ├── hello                          # command executable
+│   └── outyet                         # command executable
+├── pkg/
+│   └── linux_amd64/
+│       └── github.com/golang/example/
+│           └── stringutil.a           # package object
+└── src/
+    ├── github.com/golang/example/
+    │   └── .git/                      # Git repository metadata
+    ├── hello/
+    │   └── hello.go                   # command source
+    ├── outyet/
+    │   ├── main.go                    # command source
+    │   └── main_test.go               # test source
+    └── stringutil/
+        ├── reverse.go                 # package source
+        └── reverse_test.go            # test source
+....
+
+IMPORTANT: TODO  GOROOT / GOPATH
+
 
 == Les tests
 
