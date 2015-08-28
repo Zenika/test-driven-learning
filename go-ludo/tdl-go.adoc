@@ -3,6 +3,9 @@
 :toc-placement!:
 :icons: font
 
+:golang-uri: https://golang.org
+:golang-doc-uri: {golang-uri}/doc
+:github-uri: https://github.com
 
 .Sommaire
 toc::[]
@@ -22,6 +25,21 @@ C'est parti !
 
 
 == Point de départ
+
+Le site officiel de Go : {golang-uri}.
+
+Pour commencer, j'ai installé Go.
+C'est plutôt simple, tout se trouve à cette adresse suivante : {golang-uri}/dl.
+
+Après il me fallait un minimum de documentation sur le langage.
+N'étant pas un grand fan de StackOverflow, j'aime les sites contenant la documentation et les samples officiels.
+
+J'ai trouvé 4 points d'entrées qui m'ont semblé pertinent :
+
+- {golang-doc-uri}
+- {golang-doc-uri}/effective_go.html
+- {golang-uri}/ref/spec
+- {github-uri}/golang/go/wiki
 
 
 == La structure
