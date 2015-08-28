@@ -72,6 +72,68 @@ IMPORTANT: TODO  GOROOT / GOPATH
 
 == Les tests
 
+Après cela il me fallait comprendre comment fonctionnait les tests avec Go.
+
+Je ne voulais pas rentrer trop dans le langage tant que je savais pas comment faire un test.
+
+Une petite fouille sur le site de Go et le dépôt GitHub officiels et hop :
+
+- {github-uri}/golang/go/wiki/LearnTesting
+- https://blog.golang.org/examples
+- {github-uri}/golang-samples/testing
+- {golang-uri}/pkg/testing
+
+Un point important dans Go est le fonctionnement de sa bibliothèque de tests :
+
+[quote, '{golang-doc-uri}/faq#assertions']
+_____
+Why does Go not have assertions?
+
+Go doesn't provide assertions.
+They are undeniably convenient, but our experience has been that programmers use them as a crutch to avoid thinking about proper error handling and reporting.
+Proper error handling means that servers continue operation after non-fatal errors instead of crashing.
+Proper error reporting means that errors are direct and to the point, saving the programmer from interpreting a large crash trace.
+Precise errors are particularly important when the programmer seeing the errors is not familiar with the code.
+
+We understand that this is a point of contention.
+There are many things in the Go language and libraries that differ from modern practices, simply because we feel it's sometimes worth trying a different approach.
+_____
+
+Il n'y a donc pas d'assertions de base dans Go mais juste un structure permettant d'enregister les erreurs.
+
+J'ai trouvé cela dans la documentation de Go :
+
+.http://golang.org/doc/code.html#Testing
+[source, go]
+----
+package stringutil
+
+import "testing" <1>
+
+func TestReverse(t *testing.T) { <2>
+
+  for _, c := range []struct {
+    in, want string
+  }{
+    {"Hello, world", "dlrow, olleH"},
+    {"Hello, 世界", "界世, olleH"},
+    {"", ""},
+  } {
+    got := Reverse(c.in)
+    if got != c.want {
+      t.Errorf("Reverse(%q) == %q, want %q", c.in, got, c.want) <3>
+    }
+  }
+}
+----
+<1> importation de la bibliothèque de tests
+<2> paramètre de la méthode pour accéder au framework de tests
+<3> émission d'une erreur (echec du test)
+
+Dans la documentation il est aussi dir que les fichiers de tests doivent se terminer par `_test.go` et que chaque méthode de test doit avoir la forme `TestXXX`.
+
+Voilà je me sens prét à commencer. Je ne connais pas encore le langage mais je sais comment ecrire un test !
+
 
 == IDE
 
