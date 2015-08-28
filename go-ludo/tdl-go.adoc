@@ -7,7 +7,18 @@
 .Sommaire
 toc::[]
 
+
 == Introduction
+
+Go est un language qui buzz beaucoup depuis quelques temps, j'ai donc eut l'envie de m'initier à ce langage.
+
+Je suis demandé comment commencer : faire des tutoriels, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.
+
+Du coup, je suis dit pourquoi ne pas essayer de faire le kata FizzBuzz pour apprendre.
+
+C'est un kata très simple que je connais bien, je l'ai fait avec différentes contraintes en Java alors pourquoi ne pas le faire en Go ?
+
+C'est parti !
 
 
 == Point de départ
