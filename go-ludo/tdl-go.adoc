@@ -130,9 +130,10 @@ func TestReverse(t *testing.T) { <2>
 <2> paramètre de la méthode pour accéder au framework de tests
 <3> émission d'une erreur (echec du test)
 
-Dans la documentation il est aussi dir que les fichiers de tests doivent se terminer par `_test.go` et que chaque méthode de test doit avoir la forme `TestXXX`.
+Dans la documentation il est aussi dit que les fichiers de tests doivent se terminer par `_test.go` et que chaque méthode de test doit avoir la forme `TestXXX`.
 
-Voilà je me sens prét à commencer. Je ne connais pas encore le langage mais je sais comment ecrire un test !
+Voilà je me sens prét à commencer.
+Je ne connais pas encore le langage mais je sais comment ecrire un test !
 
 
 == IDE
