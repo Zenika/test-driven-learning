@@ -135,7 +135,7 @@ Pour lancer sbt dans ce mode là, il faut exécuter les deux commandes suivantes
 	>sbt
 
 
-On se retrouve dans le mode interactif de l'outil
+On se retrouve dans le mode interactif de l'outil, taper la commande suivante : 
 
 
 	>~test
@@ -152,7 +152,7 @@ Nous allons donc maintenant modifier le code du test précédent :
 ...
 ```
 
-et on devrait voir dans la console les tests se relancer automatiquement et se terminer avec succès.
+et on devrait voir dans la console le test se relancer automatiquement et se terminer avec succès.
 
 ## Conclusion
 
