@@ -26,36 +26,10 @@ Pour valider l'installation de sbt, taper dans la console les commandes suivante
 
 A l'invit de commande **scala>** taper le code suivant : 
 
-	scala> println("Hello World")
-	Hello World
+	scala> 1+1
+	res0: Int = 2
 
 Si vous obtenez le résultat ci-dessus alors c'est que tout est en ordre et que l'on peut passer à la suite.
-
-Nous avons ici utilisé le REPL disponible avec le language Scala (*sbt console*). Le REPL permet de pouvoir exécuter à la volée du code. 
-
-Par exemple, à l'aide du REPL on peut tester la création d'une fonction **add** qui a pour objectif d'ajouter 1 à l'entier passé en paramètre. Pour celà, on exécute successivement les commandes suivantes : 
-
-Lancement du REPL
-
-	sbt console
-
-Création d'une variable i de type Int initialisée avec la valeur 2
-	
-
-	scala> val i:Int = 2
-	i: Int = 2
-	
-Création de la fonction add
-	
-
-	scala> def add:Int=>Int = a=>a+1
-	add: Int => Int
-	
-Utilisation de la fonction add
-
-	scala> add(i)
-	res1: Int = 3
-
 
 ### Création du projet : tdl-scala
 
@@ -64,27 +38,29 @@ Sbt suit les mêmes convention que Maven en terme de structure de projet. Nous a
 Première étape création du répertoire racine du projet : **tdl-scala**
 Ensuite, il faut créer la structure (minimale) suivante :
 
-	tdl-scala
-		src/
-  			main/
-			    scala/
-    	   			<main Scala sources>
-			test/
-    			scala/
-					<test Scala sources>
-    
-
+```
+tdl-scala/
+└── src/
+    ├── main/
+    │   └── scala/
+    │       └── <main Scala sources>
+    └── test/
+        └── scala/
+            └── <test Scala sources>
+```
 Maintenant, il faut fournir le descripteur de projet à sbt. Ce fichier se nomme build.sbt et se trouve à la racine du projet : 
 
-	tdl-scala
-		src/
-  			main/
-			    scala/
-    	   			<main Scala sources>
-			test/
-    			scala/
-					<test Scala sources>
-		build.sbt
+```
+tdl-scala/
+├── src/
+│   ├── main/
+│   │   └── scala/
+│   │       └── <main Scala sources>
+│   └── test/
+│       └── scala/
+│           └── <test Scala sources>
+└── build.sbt
+```		
 	
 
 Voilà notre environnement est prêt pour commencer à travailler, enfin presque. Il faut maintenant compléter le fichier build.sbt avec quelques informations.
@@ -110,36 +86,6 @@ On retrouve comme informations :
  
 La dépendance ajoutée au projet est la librairie standard permettant d'écrire des tests en Scala. Elle nous sera utile pour l'écriture du premier test.
 
-## Première application : Hello World
-
-Traditionnellement, nous allons commencer par écrire notre première application qui aura pour objectif d'afficher le message :
-
-	Hello world
-	
-Pour cela, on va créer la classe main. Créez le fichier : 
-
-	 src/main/scala/Main.scala
-
-et ajouter le code suivant au fichier : 
-
-```scala
-	object Main extends App{
-		println("hello world")
-	}
-```
-
-Maintenant, vous pouvez lancer la commande 
-	
-	>sbt run
-	
-Vous devriez obtenir l'affichage du message (avec des informations supplémentaire) :
-	
-	Hello world
-
-Vous venez d'écrire votre premier programme en Scala.
-
-Votre environnement est prêt. Prochaine étape écrire un test 
-
 ## Premier test
 
 Aujourd'hui, savoir coder c'est savoir tester son code.  Nous allons voir comment écrire un test en Scala. Pour cela nous allons utiliser la librairie **ScalaTest**. Cette librairie fournit une API très complète permettant d'écrire des tests selon une approche **Behavior-Driven Development** (BDD)
@@ -156,30 +102,62 @@ et compléter le avec le code suivant :
 	import org.scalatest.{ShouldMatchers, FunSuite}
 
 	class MyFirstTest extends FunSuite with ShouldMatchers {
-		test("1 should not equal to 2") {
-			1 should not equal(2)
+		test("1 should equal to 2") {
+			1 should equal(2)
 		}
 	}
 ```
 
-Une fois le fichier sauvegardé, lancre la commande : 
+Une fois le fichier sauvegardé, lancer la commande : 
 
 	>sbt test
 
 Vous devriez obtenir le message suivant : 
 
-	[info] MyFirstTest:
-	[info] - 1 should not equal to 2
-	[info] Run completed in 342 milliseconds.
-	[info] Total number of tests run: 1
-	[info] Suites: completed 1, aborted 0
-	[info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
-	[info] All tests passed.
+```
+info] MyFirstTest:
+[info] - 1 should  equal to 2 *** FAILED ***
+[info]   1 did not equal 2 (MyFirstTest.scala:5)
+[info] Run completed in 486 milliseconds.
+[info] Total number of tests run: 1
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 0, failed 1, canceled 0, ignored 0, pending 0
+[info] *** 1 TEST FAILED ***	
+```
+
+
+## Passer en mode Continuous testing
+
+Avec sbt, il est possible de lancer l'exécution des tests en continu. C'est à dire que les tests vont se lancer automatiquement lors de la modification du code. C'est très pratique, cela offre une boucle de retour instantanée.
+
+Pour lancer sbt dans ce mode là, il faut exécuter les deux commandes suivantes : 
+
+	>sbt
+
+
+On se retrouve dans le mode interactif de l'outil
+
+
+	>~test
 	
+Après l'exécution de cette commande, à chaque modification du code, les tests seront exécutés.
+
+Nous allons donc maintenant modifier le code du test précédent : 
+
+```scala
+...
+	test("2 should  equal to 2") {
+          2 should  equal(2)
+    }
+...
+```
+
+et on devrait voir dans la console les tests se relancer automatiquement et se terminer avec succès.
+
 ## Conclusion
 
-Suite aux différentes étapes ci-dessus, nous avons à disposition un environnement opérationnel. Il nous permet d'écrire du code Scala, de l'exécuter et enfin de le tester.
-Notons que nous avons utiliser également le REPL qui nous permet de pouvoir rapidement explorer avec le language
+Suite aux différentes étapes ci-dessus, nous avons à disposition un environnement opérationnel. Il nous permet d'écrire du code Scala, des tests et de les exécuter
+
 
 
 
