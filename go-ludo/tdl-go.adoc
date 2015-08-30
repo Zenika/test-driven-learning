@@ -412,6 +412,8 @@ func Test_should_print_Fizz_when_passing_3(t *testing.T) {
 }
 ----
 
+Je lance les tests (`go test`) et ce nouveau test est rouge.
+
 Je créer un code stupide mais qui fait passer le test.
 
 Pour cela j'ai besoin d'écrire un `if`, je l'ai déjà fait plus haut mais en copiant du code.
