@@ -405,8 +405,9 @@ func Test_should_print_Fizz_when_passing_3(t *testing.T) {
 
     rt := Display(3)
 
-    if rt != "Fizz" {
-        t.Errorf("Must display %s but return is %s", "Fizz", rt)
+    expected := "Fizz"
+    if rt != expected {
+        t.Errorf("Must display %s but display %s", expected, rt)
     }
 }
 ----
@@ -424,7 +425,7 @@ Je comprends en écrivant cette partie que les parenthèses sont optionnelles. L
 func Display(number int) string {
 
     if number == 3
-        return 3
+        return "Fizz"
     return strconv.Itoa(number)
 }
 ----
