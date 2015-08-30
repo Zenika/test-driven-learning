@@ -725,3 +725,17 @@ Tout les tests sont verts, c'est la victoire ultime !
 
 
 == Et après ?
+
+J'ai fini le kata, cela m'a pris 3h, j'ai appris beaucoup de choses sur le langage, surtout sur la philosophie derrière le langage.
+
+Pour aller plus loin, je vais devoir faire un kata plus complexe ou débuter une application (qui sera une forme de kata).
+
+L'exploration des bibliothèques va aussi être un point important :
+
+- explorer les bibliothèques externes de tests comme http://goconvey.co[GoConvey] ou https://labix.org/gocheck[GoCheck] ou https://github.com/stretchr/testify[Testify]
+- avoir une meilleure vision d'ensemble des bibliothèques internes de Go
+- trouver les bonnes bibliothèques externes pour les cas commun
+
+Je vais aussi regarder des applications existantes, des articles, et des présentations, etc  afin d'appronfondir ma compréhension.
+
+Je faire surement un tour de Go : https://tour.golang.org/welcome/
