@@ -1,15 +1,17 @@
 = TDL Go
+
 :toc:
 :toc-placement!:
 :icons: font
 
 :golang-uri: https://golang.org
 :golang-doc-uri: {golang-uri}/doc
+:golang-blog: https://blog.golang.org
 :github-uri: https://github.com
+:golang-github: {github-uri}/golang
 
 .Sommaire
 toc::[]
-
 
 == Introduction
 
@@ -38,6 +40,7 @@ J'ai trouvé 4 points d'entrées qui m'ont semblé pertinent :
 
 - {golang-doc-uri}
 - {golang-doc-uri}/effective_go.html
+- {golang-doc-uri}/code.html
 - {golang-uri}/ref/spec
 - {github-uri}/golang/go/wiki
 
@@ -93,7 +96,7 @@ Je ne voulais pas rentrer trop dans le langage tant que je savais pas comment fa
 Une petite fouille sur le site de Go et le dépôt GitHub officiels et hop :
 
 - {github-uri}/golang/go/wiki/LearnTesting
-- https://blog.golang.org/examples
+- {golang-blog}/examples
 - {github-uri}/golang-samples/testing
 - {golang-uri}/pkg/testing
 
@@ -117,7 +120,7 @@ Il n'y a donc pas d'assertions de base dans Go mais juste un structure permettan
 
 J'ai trouvé cela dans la documentation de Go :
 
-.http://golang.org/doc/code.html#Testing
+.{golang-doc-uri}/code.html#Testing
 [source, go]
 ----
 package stringutil
@@ -166,7 +169,7 @@ Je suppose que VIM doit avoir un support mais n'étant pas un grand habitué de 
 
 Je me retrouve sur le site officiel puis le GitHub et je trouve cette page :
 
-- https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins
+- {golang-github}/go/wiki/IDEsAndTextEditorPlugins
 
 Je décide donc de tester https://github.com/visualfc/liteide[LiteIDE].
 Super autocomplétion des libraries, le style de l'IDE est moche mais bon si va bien c'est OK.
