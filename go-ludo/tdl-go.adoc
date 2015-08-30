@@ -475,7 +475,46 @@ func Display(number int) string {
 Je relance les tests (`go test`) et ce test est vert, encore une victoire !
 
 
-=== Step 3
+=== Etape 4
+
+J'ajoute un nouveau test pour afficher `Buzz` lorsque le chiffre est `5`.
+
+.fizzbuz_test.go
+[source, go]
+----
+// Pour les multiples de cinq afficher "Buzz".
+func Test_should_print_Buzz_when_passing_5(t *testing.T) {
+
+    rt := Display(5)
+
+    expected := "Buzz"
+    if rt != expected {
+        t.Errorf("Must display %s but display %s", expected, rt)
+    }
+}
+----
+
+Je lance les tests (`go test`) et ce nouveau test est rouge.
+
+Suivi de l'implémentation très simpliste :
+
+.fizzbuz.go
+[source, go]
+----
+// Display number
+func Display(number int) string {
+
+    if number % 3 == 0
+        return "Fizz"
+    if number == 5
+        return "Buzz"
+    return strconv.Itoa(number)
+}
+----
+
+Je relance les tests (`go test`) et ce test est vert, encore une victoire !
+
+
 
 
 
