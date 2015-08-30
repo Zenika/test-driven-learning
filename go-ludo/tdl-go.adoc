@@ -320,7 +320,7 @@ J'ai une idée très partielle du langage mais c'est parti pour le kata.
 
 Mon objectif est bien sur de faire ce kata en TDD avec des *baby steps*.
 
-=== Step 1
+=== Etape 1
 
 Je connais bien ce kata donc je commence par écrire un test simple pour écrire un chiffre dans la console.
 
@@ -391,7 +391,7 @@ func Display(number int) string {
 Je lance les tests (`go test`) et c'est bon mon test est vert, victoire !
 
 
-=== Step 2
+=== Etape 2
 
 Bon maintenant, je vais devoir ajouter un nouveau test pour afficher `Fizz` lorsque le chiffre est `3`.
 
