@@ -47,6 +47,7 @@ J'ai trouvé 4 points d'entrées qui m'ont semblé pertinent :
 La question de base pour commencer correctement avec un langage c'est la structure d'un projet. Pour Go, il a été facile de trouver cela sur le officiel : {golang-doc-uri}/code.html
 
 ....
+<GOPATH>
 ├── bin/
 │   ├── hello                          # command executable
 │   └── outyet                         # command executable
@@ -67,8 +68,21 @@ La question de base pour commencer correctement avec un langage c'est la structu
         └── reverse_test.go            # test source
 ....
 
-IMPORTANT: TODO  GOROOT / GOPATH
+Normalement lors de l'installation la variable d'environnement `GOROOT`, pointant vers les binaires de Go a du être crée.
 
+IMPORTANT: En plus de `GOROOT`, il faut définir la variable d'environnement `GOPATH` qui doit pointer vers la racine du workspace du projet (cf stucture ci-dessus).
+Plus d'informations : https://golang.org/doc/code.html#GOPATH
+
+
+J'ai créé uniquement la structure suivante :
+
+....
+goworkspace
+├── bin/
+├── pkg/
+└── src/
+    └── fizzbuzz/
+....
 
 == Les tests
 
