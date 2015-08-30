@@ -15,7 +15,7 @@ toc::[]
 
 == Introduction
 
-Go est un language qui buzz beaucoup depuis quelques temps, j'ai donc eut l'envie de m'initier à ce langage.
+Go est un langage qui buzz beaucoup depuis quelques temps, j'ai donc eut l'envie de m'initier à ce langage.
 
 Je suis demandé comment commencer : faire des tutoriels, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.
 
@@ -73,7 +73,7 @@ La question de base pour commencer correctement avec un langage c'est la structu
 
 Normalement lors de l'installation la variable d'environnement `GOROOT`, pointant vers les binaires de Go a du être crée.
 
-IMPORTANT: En plus de `GOROOT`, il faut définir la variable d'environnement `GOPATH` qui doit pointer vers la racine du workspace du projet (cf stucture ci-dessus).
+IMPORTANT: En plus de `GOROOT`, il faut définir la variable d'environnement `GOPATH` qui doit pointer vers la racine du workspace du projet (cf structure ci-dessus).
 Plus d'informations : https://golang.org/doc/code.html#GOPATH
 
 
@@ -116,7 +116,7 @@ We understand that this is a point of contention.
 There are many things in the Go language and libraries that differ from modern practices, simply because we feel it's sometimes worth trying a different approach.
 _____
 
-Il n'y a donc pas d'assertions de base dans Go mais juste un structure permettant d'enregister les erreurs.
+Il n'y a donc pas d'assertions de base dans Go mais juste un structure permettant d'enregistrer les erreurs.
 
 J'ai trouvé cela dans la documentation de Go :
 
@@ -145,12 +145,12 @@ func TestReverse(t *testing.T) { <2>
 ----
 <1> importation de la bibliothèque de tests
 <2> paramètre de la méthode pour accéder au framework de tests
-<3> émission d'une erreur (echec du test)
+<3> émission d'une erreur (échec du test)
 
 Dans la documentation il est aussi dit que les fichiers de tests doivent se terminer par `_test.go` et que chaque méthode de test doit avoir la forme `TestXXX`.
 
-Voilà je me sens prét à commencer.
-Je ne connais pas encore le langage mais je sais comment ecrire un test !
+Voilà je me sens prêt à commencer.
+Je ne connais pas encore le langage mais je sais comment écrire un test !
 
 
 == IDE
@@ -159,7 +159,7 @@ Pour pouvoir écrire un code, un bon outil c'est important.
 
 Donc je suis parti à la recherche d'un IDE pour Go.
 
-Premier test avec mes IDE habituels, ca oui j'utilise plusieurs IDE.
+Premier test avec mes IDE habituels, car oui j'utilise plusieurs IDE.
 
 Donc j'ouvre Brackets, IntelliJ et Eclipse à la recherche du support langage.
 
@@ -172,32 +172,32 @@ Je me retrouve sur le site officiel puis le GitHub et je trouve cette page :
 - {golang-github}/go/wiki/IDEsAndTextEditorPlugins
 
 Je décide donc de tester https://github.com/visualfc/liteide[LiteIDE].
-Super autocomplétion des libraries, le style de l'IDE est moche mais bon si va bien c'est OK.
+Super autocomplétion des bibliothèques, le style de l'IDE est moche mais bon si va bien c'est OK.
 Mais *fail* car le support du clavier est destiné uniquement au clavier QWERTY.
 
 Donc c'est reparti pour tester un nouvel IDE.
 
-J'avais déjà https://atom.io[Atom] d'installé donc je regarde les plugins disponible et supprise :
+J'avais déjà installé https://atom.io[Atom] donc je regarde les plugins disponible et surprise :
 
 - {atom-package-uri}/language-go[language-go]
 - {atom-package-uri}/go-plus[go-plus] : `apm install go-plus`
 
 `language-go` permet le support de la coloration syntaxique de Go.
 
-`go-plus` permet d'avoir de l'autocomplétion, le formatteur officiel, du linting et donne un retour visuel des erreurs de syntaxe. Un super plugin !
+`go-plus` permet d'avoir de l'auto-complétion, le formateur officiel, du linting et donne un retour visuel des erreurs de syntaxe. Un super plugin !
 
-`go-plus` necessite l'installation de {github-uri}/nsf/gocode[Gocode] pour l'autocompletion.
+`go-plus` nécessite l'installation de {github-uri}/nsf/gocode[Gocode] pour l'autocompletion.
 
-J'ai donc arreté mon choix sur Atom.
+J'ai donc arrêté mon choix sur Atom.
 
 
 == Le langage
 
 Maintenant, il faut mettre les mains dans cambouis !
 
-Les commentaires sont assez clasiques : `// mon commentaire` et `/* mon commentaire */`
+Les commentaires sont assez classiques : `// mon commentaire` et `/* mon commentaire */`
 
-Après quelques lectures de la documentation et de quelques samples, je comprends que dans Go est principalement un language fonctionnel où les fonctions sont simplement exposée par le package.
+Après quelques lectures de la documentation et de quelques samples, je comprends que dans Go est principalement un langage fonctionnel où les fonctions sont simplement exposée par le package.
 
 J'ai décidé de créer un premier fichier `fizzbuzz.go`.
 
@@ -251,7 +251,7 @@ Mais mon premier objectif n'était pas de faire tourner une ligne de commande ma
 
 J'ai donc gardé le premier contenu du fichier `fizzbuzz.go` et créé nouveau fichier `fizzbuzz_test.go`
 
-Pour cela, il me faut déclarer des variables, je regarde les sources examples du GitHub officiel.
+Pour cela, il me faut déclarer des variables, je regarde les sources exemples du GitHub officiel.
 
 Je comprends que les variables sont déclarées sous la forme :
 
@@ -332,7 +332,7 @@ Pour les multiples de cinq afficher `Buzz`.
 Pour les multiples de trois et de cinq afficher `FizzBuzz`.
 
 
-=== Etape 1 - Afficher un chiffre
+=== Étape 1 - Afficher un chiffre
 
 Je connais bien ce kata donc je commence par écrire un test simple pour écrire un chiffre dans la console.
 
@@ -354,7 +354,7 @@ func Test_should_print_string_representation_when_passing_an_integer(t *testing.
 }
 ----
 
-Voilà le test est écrit mais il est rouge : la function `Display` n'existe pas.
+Voilà le test est écrit mais il est rouge : la fonction `Display` n'existe pas.
 
 Pour créer cette méthode je dois pouvoir passer un paramètre à une fonction et convertir un `int` et `string`.
 
@@ -403,11 +403,11 @@ func Display(number int) string {
 Je lance les tests (`go test`) et c'est bon mon test est vert, victoire !
 
 
-=== Etape 2 - Multiple de 3
+=== Étape 2 - Multiple de 3
 
 Bon maintenant, je vais devoir ajouter un nouveau test pour afficher `Fizz` lorsque le chiffre est `3`.
 
-Ecrire le test est assez simple.
+Écrire le test est assez simple.
 
 .fizzbuz_test.go
 [source, go]
@@ -444,12 +444,12 @@ func Display(number int) string {
 }
 ----
 
-Les accolades pour les `if` sont optionnelles, pour l'instant je n'en met pas (je ne suis pas fan du code inline ou sans accolades, je trouve que cela manque de lisibilité et augmente le risque d'erreur lors des évolutions).
+Les accolades pour les `if` sont optionnelles, pour l'instant je n'en met pas (je ne suis pas fan du code inline ou sans accolades, je trouve que cela manque de lisibilité et augmente le risque d'erreurs lors des évolutions).
 
 Je relance les tests (`go test`) et ce test est vert, encore une victoire !
 
 
-=== Etape 3 - Multiple de 3
+=== Étape 3 - Multiple de 3
 
 Afin de faire une implémentation plus correcte j'ajoute un test pour le chiffre `6`.
 
@@ -487,7 +487,7 @@ func Display(number int) string {
 Je relance les tests (`go test`) et tous les tests sont verts, encore une victoire !
 
 
-=== Etape 4 - Multiple de 5
+=== Étape 4 - Multiple de 5
 
 J'ajoute un nouveau test pour afficher `Buzz` lorsque le chiffre est `5`.
 
@@ -527,7 +527,7 @@ func Display(number int) string {
 Je relance les tests (`go test`) et tous les tests sont verts, encore une victoire !
 
 
-=== Etape 5 - Multiple de 5
+=== Étape 5 - Multiple de 5
 
 Même travaille que pour les étapes 3 et 4.
 
@@ -565,7 +565,7 @@ func Display(number int) string {
 Je relance les tests (`go test`) et tous les tests sont verts, encore une victoire !
 
 
-=== Etape 6 - Multiple de 3 et 5
+=== Étape 6 - Multiple de 3 et 5
 
 Ajout d'un nouveau test pour les multiples de trois et de cinq qui doivent transformés en "FizzBuzz".
 
@@ -659,7 +659,7 @@ func Display(number int) string {
 }
 ----
 
-Les tests sont verts, avant de passer à l'étape suivente j'ajoute un test pour vérifier que la régle fonctionne bien :
+Les tests sont verts, avant de passer à l'étape suivante j'ajoute un test pour vérifier que la règle fonctionne bien :
 
 .fizzbuz_test.go
 [source, go]
@@ -681,7 +681,7 @@ Les tests sont verts, c'est parti pour la dernière étape.
 
 === Etape 7 - de 1 à 100
 
-Il ne me reste plus qu'à traiter le fait de traiter une sequence de 1 à 100.
+Il ne me reste plus qu'à traiter le fait de traiter une séquence de 1 à 100.
 
 Pour cela j'ajoute un test :
 
@@ -736,6 +736,6 @@ L'exploration des bibliothèques va aussi être un point important :
 - avoir une meilleure vision d'ensemble des bibliothèques internes de Go
 - trouver les bonnes bibliothèques externes pour les cas commun
 
-Je vais aussi regarder des applications existantes, des articles, et des présentations, etc  afin d'appronfondir ma compréhension.
+Je vais aussi regarder des applications existantes, des articles, et des présentations, etc  afin d'approfondir ma compréhension.
 
-Je faire surement un tour de Go : https://tour.golang.org/welcome/
+Je faire sûrement un tour de Go : https://tour.golang.org/welcome/
