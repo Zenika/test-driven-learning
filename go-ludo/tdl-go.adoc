@@ -515,6 +515,44 @@ func Display(number int) string {
 Je relance les tests (`go test`) et ce test est vert, encore une victoire !
 
 
+=== Etape 5
+
+Même travaille que pour les étapes 3 et 4.
+
+.fizzbuz_test.go
+[source, go]
+----
+// Pour les multiples de cinq afficher "Buzz".
+func Test_should_print_Buzz_when_passing_20(t *testing.T) {
+
+    rt := Display(20)
+
+    expected := "Buzz"
+    if rt != "Buzz" {
+        t.Errorf("Must display %s but display %s", "Buzz", rt)
+    }
+}
+----
+
+Je lance les tests (`go test`) et ce nouveau test est rouge.
+
+.fizzbuz.go
+[source, go]
+----
+// Display number
+func Display(number int) string {
+
+    if number % 3 == 0
+        return "Fizz"
+    if number % 5 == 0
+        return "Buzz"
+    return strconv.Itoa(number)
+}
+----
+
+Je relance les tests (`go test`) et ce test est vert, encore une victoire !
+
+
 
 
 
