@@ -193,6 +193,128 @@ J'ai donc arreté mon choix sur Atom.
 
 == Le langage
 
+Maintenant, il faut mettre les mains dans cambouis !
+
+Les commentaires sont assez clasiques : `// mon commentaire` et `/* mon commentaire */`
+
+Après quelques lectures de la documentation et de quelques samples, je comprends que dans Go est principalement un language fonctionnel où les fonctions sont simplement exposée par le package.
+
+J'ai décidé de créer un premier fichier `fizzbuzz.go`.
+
+A l'aide de la documentation j'ai créé ceci :
+
+.fizzbuzz.go
+[source, go]
+----
+package kata
+
+import "fmt"
+
+// FizzBuzz main function
+func FizzBuzz() {
+  fmt.Println("Kata FizzBuzz")
+}
+----
+
+C'est un fichier simple qui affiche `Kata FizzBuzz` dans la console.
+
+Je tente :
+
+[source, shell]
+----
+go run fizzbuzz.go
+----
+
+Mais cela ne marche pas :
+
+....
+go run: cannot run non-main package
+....
+
+Ok j'ai fait n'importe quoi en voulant lancer ce fichier.
+Pour que cela marche j'aurais du définir le package de mon fichier comme étant `main` et créer une fonction nommé `main` :
+
+.fizzbuz.go
+[source, go]
+----
+package main
+
+import "fmt"
+
+// FizzBuzz main function
+func main() {
+  fmt.Println("Kata FizzBuzz")
+}
+----
+
+Mais mon premier objectif n'était pas de faire tourner une ligne de commande mais des tests afin de pouvoir faire le kata.
+
+J'ai donc gardé le premier contenu du fichier `fizzbuzz.go` et créé nouveau fichier `fizzbuzz_test.go`
+
+Pour cela, il me faut déclarer des variables, je regarde les sources examples du GitHub officiel.
+
+Je comprends les variables sont déclarées sous la forme :
+
+[source, go]
+----
+var foo string
+----
+
+Et qu'il est possible, lors d'une déclaration avec assignation, utiliser une notation réduite :
+
+[source, go]
+----
+foo := "bar"
+----
+- pas besoin de `var`
+- pas besoin de définir le type
+
+J'écris donc mon premier test.
+
+.fizzbuz_test.go
+[source, go]
+----
+package kata
+
+import "testing"
+
+func Test_Should_TODO(t *testing.T) {
+
+  FizzBuzz()
+
+  actual := "0"
+  expected := "1"
+
+  if actual != expected {
+    t.Errorf("Expected %s but was %s", expected, actual)
+  }
+}
+----
+
+J'ai simplement appelé la fonction `FizzBuzz` dans le test  et lancé le test :
+
+[source, shell]
+----
+go test
+----
+
+Et la sortie de console était plutôt positive :
+
+- mon message `Kata FizzBuzz` s'affichait bien
+- mon test échouait ce qui était mon objectif.
+
+
+....
+Kata FizzBuzz
+--- FAIL: Test_Should_TODO (0.00s)
+        fizzbuzz_test.go:13: Expected 1 but was 0
+FAIL
+exit status 1
+FAIL    /mysources/kata/fizz-buzz/go        0.084s
+....
+
+J'ai une idée très partielle du langage mais c'est parti pour le kata.
+
 
 == Le kata
 
