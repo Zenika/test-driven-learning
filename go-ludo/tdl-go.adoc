@@ -318,5 +318,78 @@ J'ai une idée très partielle du langage mais c'est parti pour le kata.
 
 == Le kata
 
+Mon objectif est bien sur de faire ce kata en TDD avec des *baby steps*.
+
+=== Step 1
+
+Je connais bien ce kata donc je commence par écrire un test simple pour écrire un chiffre dans la console.
+
+.fizzbuz_test.go
+[source, go]
+----
+package kata
+
+import "testing"
+
+func Test_should_print_string_representation_when_passing_an_integer(t *testing.T) {
+
+    rt := Display(1)
+
+    expected := "1"
+    if rt != expected {
+        t.Errorf("Must display %s but display %s", expected, rt)
+    }
+}
+----
+
+Voilà le test est écrit mais il est rouge : la function `Display` n'existe pas.
+
+Pour créer cette méthode je doit pouvoir passer un paramètre à une fonction et convertir un `int` et `string`.
+
+Encore une retour à la documentation.
+
+La déclaration d'un paramètre d'une fonction se fait en écrivant le nom du paramètre puis son type.
+Il possible de définir le type de retour en ajout le type après la déclaration de la méthode.
+
+[source, go]
+----
+func Foo(bar int) string {
+  // ...
+}
+----
+
+Le deuxième point plus compliqué car je ne vois pas comment convertir un `int` en `string`.
+
+Je ne trouve rien rapidement dans la documentation donc Google est mon ami.
+
+Ce n'est pas très intuitif car il faut importer le package `strconv` et utiliser la méthode `strconv.Itoa()`.
+
+Je créer la méthode `Display` dans `fizzbuz.go`.
+
+.fizzbuz.go
+[source, go]
+----
+package kata
+
+import "fmt"
+import (
+    "fmt"
+    "strconv"
+)
+
+// FizzBuzz main function
+func FizzBuzz() {
+    fmt.Println("Kata FizzBuzz")
+}
+
+// Display number
+func Display(number int) string {
+    return strconv.Itoa(number)
+}
+----
+
+Je lance les tests (`go test`) et c'est bon mon test est vert, victoire !
+
+
 
 == Et après ?
