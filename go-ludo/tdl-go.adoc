@@ -4,10 +4,11 @@
 :toc-placement!:
 :icons: font
 
+:github-uri: https://github.com
+:docker-uri: https://www.docker.com
 :golang-uri: https://golang.org
 :golang-doc-uri: {golang-uri}/doc
 :golang-blog: https://blog.golang.org
-:github-uri: https://github.com
 :golang-github: {github-uri}/golang
 
 .Sommaire
@@ -15,7 +16,7 @@ toc::[]
 
 == Introduction
 
-Go est un langage qui buzz beaucoup depuis quelques temps, j'ai donc eut l'envie de m'initier à ce langage.
+Go est un langage qui buzz beaucoup depuis quelques temps en grande partie à cause de {docker-uri}[Docker], j'ai donc eut l'envie de m'initier à ce langage.
 
 Je suis demandé comment commencer : faire des tutoriels, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.
 
