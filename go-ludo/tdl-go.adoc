@@ -391,5 +391,52 @@ func Display(number int) string {
 Je lance les tests (`go test`) et c'est bon mon test est vert, victoire !
 
 
+=== Step 2
+
+Bon maintenant, je vais devoir ajouter un nouveau test pour afficher `Fizz` lorsque le chiffre est `3`.
+
+Ecrire le test est assez simple.
+
+.fizzbuz_test.go
+[source, go]
+----
+// Pour les multiples de trois afficher "Fizz".
+func Test_should_print_Fizz_when_passing_3(t *testing.T) {
+
+    rt := Display(3)
+
+    if rt != "Fizz" {
+        t.Errorf("Must display %s but return is %s", "Fizz", rt)
+    }
+}
+----
+
+Je créer un code stupide mais qui fait passer le test.
+
+Pour cela j'ai besoin d'écrire un `if`, je l'ai déjà fait plus haut mais en copiant du code.
+
+Je comprends en écrivant cette partie que les parenthèses sont optionnelles. Le formateur de Go les supprime automatiquement.
+
+.fizzbuz.go
+[source, go]
+----
+// Display number
+func Display(number int) string {
+
+    if number == 3
+        return 3
+    return strconv.Itoa(number)
+}
+----
+
+Les accolades pour les `if` sont optionnelles, pour l'instant je n'en met pas (je ne suis pas fan du code inline ou sans accolades, je trouve que cela manque de lisibilité et augmente le risque d'erreur lors des évolutions).
+
+
+Je relance les tests (`go test`) et ce test est vert, encore une victoire !
+
+
+=== Step 3
+
+
 
 == Et après ?
