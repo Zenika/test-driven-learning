@@ -679,6 +679,49 @@ func Test_should_print_FizzBuzz_when_passing_30(t *testing.T) {
 Les tests sont verts, c'est parti pour la dernière étape.
 
 
+=== Etape 7
+
+Il ne me reste plus qu'à traiter le fait de traiter une sequence de 1 à 100.
+
+Pour cela j'ajoute un test :
+
+.fizzbuz_test.go
+[source, go]
+----
+// Afficher les chiffres de 1 to 100.
+func Test_should_display_a_valid_result_when_diplay_numbers_between_1_and_100(t *testing.T) {
+
+    rt := FizzBuzz(100)
+
+    expected := "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n16\n17\nFizz\n19\nBuzz\nFizz\n22\n23\nFizz\nBuzz\n26\nFizz\n28\n29\nFizzBuzz\n31\n32\nFizz\n34\nBuzz\nFizz\n37\n38\nFizz\nBuzz\n41\nFizz\n43\n44\nFizzBuzz\n46\n47\nFizz\n49\nBuzz\nFizz\n52\n53\nFizz\nBuzz\n56\nFizz\n58\n59\nFizzBuzz\n61\n62\nFizz\n64\nBuzz\nFizz\n67\n68\nFizz\nBuzz\n71\nFizz\n73\n74\nFizzBuzz\n76\n77\nFizz\n79\nBuzz\nFizz\n82\n83\nFizz\nBuzz\n86\nFizz\n88\n89\nFizzBuzz\n91\n92\nFizz\n94\nBuzz\nFizz\n97\n98\nFizz\n"
+
+    if rt != expected {
+        t.Errorf("Must display %s but return is %s", expected, rt)
+    }
+}
+----
+
+Le test est rouge, le code ne compile pas il faut que je modifie la méthode `FizzBuzz`.
+
+J'ai besoin de faire un `for`, je regarde la documentation, c'est comme en Java et je ne vois pas de générateur de 'range'.
+
+.fizzbuz.go
+[source, go]
+----
+// FizzBuzz main function
+func FizzBuzz(max int) string {
+    fmt.Println("Kata FizzBuzz")
+
+    var result string
+
+    for i := 1; i < max; i++ {
+        result += Display(i) + "\n"
+    }
+    return result
+}
+----
+
+Tout les tests sont verts, c'est la victoire ultime !
 
 
 == Et après ?
