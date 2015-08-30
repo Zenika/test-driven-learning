@@ -540,8 +540,8 @@ func Test_should_print_Buzz_when_passing_20(t *testing.T) {
     rt := Display(20)
 
     expected := "Buzz"
-    if rt != "Buzz" {
-        t.Errorf("Must display %s but display %s", "Buzz", rt)
+    if rt != expected {
+        t.Errorf("Must display %s but display %s", expected, rt)
     }
 }
 ----
