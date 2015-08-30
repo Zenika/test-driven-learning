@@ -95,7 +95,7 @@ Je ne voulais pas rentrer trop dans le langage tant que je savais pas comment fa
 
 Une petite fouille sur le site de Go et le dépôt GitHub officiels et hop :
 
-- {github-uri}/golang/go/wiki/LearnTesting
+- {golang-github}/go/wiki/LearnTesting
 - {golang-blog}/examples
 - {github-uri}/golang-samples/testing
 - {golang-uri}/pkg/testing
@@ -253,7 +253,7 @@ J'ai donc gardé le premier contenu du fichier `fizzbuzz.go` et créé nouveau f
 
 Pour cela, il me faut déclarer des variables, je regarde les sources examples du GitHub officiel.
 
-Je comprends les variables sont déclarées sous la forme :
+Je comprends que les variables sont déclarées sous la forme :
 
 [source, go]
 ----
@@ -344,7 +344,7 @@ func Test_should_print_string_representation_when_passing_an_integer(t *testing.
 
 Voilà le test est écrit mais il est rouge : la function `Display` n'existe pas.
 
-Pour créer cette méthode je doit pouvoir passer un paramètre à une fonction et convertir un `int` et `string`.
+Pour créer cette méthode je dois pouvoir passer un paramètre à une fonction et convertir un `int` et `string`.
 
 Encore une retour à la documentation.
 
