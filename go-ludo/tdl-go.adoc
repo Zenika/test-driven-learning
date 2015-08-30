@@ -738,4 +738,4 @@ L'exploration des bibliothèques va aussi être un point important :
 
 Je vais aussi regarder des applications existantes, des articles, et des présentations, etc  afin d'approfondir ma compréhension.
 
-Je faire sûrement un tour de Go : https://tour.golang.org/welcome/
+Je sûrement faire un tour de Go : https://tour.golang.org/welcome/
