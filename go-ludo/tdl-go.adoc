@@ -565,6 +565,119 @@ func Display(number int) string {
 Je relance les tests (`go test`) et tous les tests sont verts, encore une victoire !
 
 
+=== Etape 6
+
+Ajout d'un nouveau test pour les multiples de trois et de cinq qui doivent transformés en "FizzBuzz".
+
+.fizzbuz_test.go
+[source, go]
+----
+// Pour les multiples de trois et de cinq afficher "FizzBuzz".
+func Test_should_print_FizzBuzz_when_passing_15(t *testing.T) {
+
+    rt := Display(15)
+
+    expected := "FizzBuzz"
+    if rt != expected {
+        t.Errorf("Must display %s but return is %s", expected, rt)
+    }
+}
+----
+
+Première phase 'aller au vert le plus rapidement'.
+
+.fizzbuz.go
+[source, go]
+----
+// Display number
+func Display(number int) string {
+
+    if number % 3 == 0 && number % 5 == 0
+        return "FizzBuzz"
+    if number % 3 == 0
+        return "Fizz"
+    if number % 5 == 0
+        return "Buzz"
+    return strconv.Itoa(number)
+}
+----
+
+Les tests sont verts mais il y a beaucoup de duplication dans le code donc je dois factoriser le code en créant une méthode `IsMultipleOf`.
+
+.fizzbuz.go
+[source, go]
+----
+// IsMultipleOf divisor for number
+func IsMultipleOf(divisor int, number int) bool {
+    return number%divisor == 0
+}
+----
+
+Ce qui me permet d'écrire la méthode `Display` ainsi :
+
+.fizzbuz.go
+[source, go]
+----
+// Display number
+func Display(number int) string {
+
+    if IsMultipleOf(3, number) && IsMultipleOf(5, number) {
+        return "FizzBuzz"
+    }
+    if IsMultipleOf(3, number) {
+        return "Fizz"
+    }
+    if IsMultipleOf(5, number) {
+        return "Buzz"
+    }
+    return strconv.Itoa(number)
+}
+----
+
+Les tests sont verts mais je suis pas très fan de la répétition donc :
+
+.fizzbuz.go
+[source, go]
+----
+// Display number
+func Display(number int) string {
+
+    fizz := IsMultipleOf(3, number)
+    buzz := IsMultipleOf(5, number)
+
+    if fizz && buzz {
+        return "FizzBuzz"
+    }
+    if fizz {
+        return "Fizz"
+    }
+    if buzz {
+        return "Buzz"
+    }
+
+    return strconv.Itoa(number)
+}
+----
+
+Les tests sont verts, avant de passer à l'étape suivente j'ajoute un test pour vérifier que la régle fonctionne bien :
+
+.fizzbuz_test.go
+[source, go]
+----
+// Pour les multiples de trois et de cinq afficher "FizzBuzz".
+func Test_should_print_FizzBuzz_when_passing_30(t *testing.T) {
+
+    rt := Display(30)
+
+    expected := "FizzBuzz"
+    if rt != expected {
+        t.Errorf("Must display %s but return is %s", expected, rt)
+    }
+}
+----
+
+Les tests sont verts, c'est parti pour la dernière étape.
+
 
 
 
