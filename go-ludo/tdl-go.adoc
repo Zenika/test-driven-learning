@@ -472,7 +472,7 @@ func Display(number int) string {
 }
 ----
 
-Je relance les tests (`go test`) et ce test est vert, encore une victoire !
+Je relance les tests (`go test`) et tous les tests sont verts, encore une victoire !
 
 
 === Etape 4
@@ -512,7 +512,7 @@ func Display(number int) string {
 }
 ----
 
-Je relance les tests (`go test`) et ce test est vert, encore une victoire !
+Je relance les tests (`go test`) et tous les tests sont verts, encore une victoire !
 
 
 === Etape 5
@@ -550,7 +550,7 @@ func Display(number int) string {
 }
 ----
 
-Je relance les tests (`go test`) et ce test est vert, encore une victoire !
+Je relance les tests (`go test`) et tous les tests sont verts, encore une victoire !
 
 
 
