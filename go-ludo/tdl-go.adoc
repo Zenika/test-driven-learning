@@ -320,6 +320,18 @@ J'ai une idée très partielle du langage mais c'est parti pour le kata.
 
 Mon objectif est bien sur de faire ce kata en TDD avec des *baby steps*.
 
+
+=== Description du kata
+
+Afficher les chiffres de 1 to 100.
+
+Pour les multiples de trois afficher `Fizz`.
+
+Pour les multiples de cinq afficher `Buzz`.
+
+Pour les multiples de trois et de cinq afficher `FizzBuzz`.
+
+
 === Etape 1
 
 Je connais bien ce kata donc je commence par écrire un test simple pour écrire un chiffre dans la console.
