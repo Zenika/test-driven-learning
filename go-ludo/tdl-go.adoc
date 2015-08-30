@@ -434,6 +434,43 @@ func Display(number int) string {
 
 Les accolades pour les `if` sont optionnelles, pour l'instant je n'en met pas (je ne suis pas fan du code inline ou sans accolades, je trouve que cela manque de lisibilité et augmente le risque d'erreur lors des évolutions).
 
+Je relance les tests (`go test`) et ce test est vert, encore une victoire !
+
+
+=== Etape 3
+
+Afin de faire une implémentation plus correcte j'ajoute un test pour le chiffre `6`.
+
+.fizzbuz_test.go
+[source, go]
+----
+// Pour les multiples de trois afficher "Fizz".
+func Test_should_print_Fizz_when_passing_6(t *testing.T) {
+
+    rt := Display(6)
+
+    expected := "Fizz"
+    if rt != expected {
+        t.Errorf("Must display %s but display %s", expected, rt)
+    }
+}
+----
+
+Je lance les tests (`go test`) et ce nouveau test est rouge.
+
+Maintenant je fais un refactor de l'implémentation afin de traiter ce nouveau cas.
+
+.fizzbuz.go
+[source, go]
+----
+// Display number
+func Display(number int) string {
+
+    if number % 3 == 0
+        return "Fizz"
+    return strconv.Itoa(number)
+}
+----
 
 Je relance les tests (`go test`) et ce test est vert, encore une victoire !
 
