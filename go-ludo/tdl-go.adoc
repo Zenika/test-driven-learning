@@ -10,7 +10,8 @@
 :golang-doc-uri: {golang-uri}/doc
 :golang-blog: https://blog.golang.org
 :golang-github: {github-uri}/golang
-:atom-package-uri: https://atom.io/packages
+:atom-uri: https://atom.io
+:atom-package-uri: {atom-uri}/packages
 
 .Sommaire
 toc::[]
@@ -179,7 +180,7 @@ Mais *fail* car le support du clavier est destiné uniquement au clavier QWERTY.
 
 Donc c'est reparti pour tester un nouvel IDE.
 
-J'avais déjà installé https://atom.io[Atom] donc je regarde les plugins disponible et surprise :
+J'avais déjà installé {atom-uri}[Atom] donc je regarde les plugins disponible et surprise :
 
 - {atom-package-uri}/language-go[language-go]
 - {atom-package-uri}/go-plus[go-plus] : `apm install go-plus`
