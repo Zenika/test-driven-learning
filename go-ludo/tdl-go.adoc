@@ -22,7 +22,7 @@ Go est un langage qui buzz beaucoup depuis quelques temps en grande partie à ca
 
 Je me suis demandé comment commencer : faire des tutoriels, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.
 
-Du coup, je suis dit pourquoi ne pas essayer de faire le kata FizzBuzz pour apprendre.
+Du coup, je me suis dit pourquoi ne pas essayer de faire le kata FizzBuzz pour apprendre.
 
 C'est un kata très simple que je connais bien, je l'ai fait avec différentes contraintes en Java alors pourquoi ne pas le faire en Go ?
 
@@ -744,4 +744,4 @@ L'exploration des bibliothèques va aussi être un point important :
 
 Je vais aussi regarder des applications existantes, des articles, et des présentations, etc  afin d'approfondir ma compréhension.
 
-Je sûrement faire un tour de Go : https://tour.golang.org/welcome/
+Je vais sûrement faire _un tour de Go_ : https://tour.golang.org/welcome/
