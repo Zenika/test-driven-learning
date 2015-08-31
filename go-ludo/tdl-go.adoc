@@ -72,7 +72,7 @@ La question de base pour commencer correctement avec un langage c'est la structu
         └── reverse_test.go            # test source
 ....
 
-Normalement lors de l'installation la variable d'environnement `GOROOT`, pointant vers les binaires de Go a du être crée.
+Normalement lors de l'installation la variable d'environnement `GOROOT`, pointant vers les binaires de Go, a du être crée.
 
 IMPORTANT: En plus de `GOROOT`, il faut définir la variable d'environnement `GOPATH` qui doit pointer vers la racine du workspace du projet (cf structure ci-dessus).
 Plus d'informations : https://golang.org/doc/code.html#GOPATH
@@ -117,7 +117,7 @@ We understand that this is a point of contention.
 There are many things in the Go language and libraries that differ from modern practices, simply because we feel it's sometimes worth trying a different approach.
 _____
 
-Il n'y a donc pas d'assertions de base dans Go mais juste un structure permettant d'enregistrer les erreurs.
+Il n'y a donc pas d'assertions de base dans Go mais juste une structure permettant _d'enregistrer les erreurs_.
 
 J'ai trouvé cela dans la documentation de Go :
 
@@ -148,7 +148,7 @@ func TestReverse(t *testing.T) { <2>
 <2> paramètre de la méthode pour accéder au framework de tests
 <3> émission d'une erreur (échec du test)
 
-Dans la documentation il est aussi dit que les fichiers de tests doivent se terminer par `_test.go` et que chaque méthode de test doit avoir la forme `TestXXX`.
+Dans la documentation, il est aussi dit que les fichiers de tests doivent se terminer par `_test.go` et que chaque méthode de test doit avoir la forme `TestXXX`.
 
 Voilà je me sens prêt à commencer.
 Je ne connais pas encore le langage mais je sais comment écrire un test !
@@ -173,7 +173,7 @@ Je me retrouve sur le site officiel puis le GitHub et je trouve cette page :
 - {golang-github}/go/wiki/IDEsAndTextEditorPlugins
 
 Je décide donc de tester https://github.com/visualfc/liteide[LiteIDE].
-Super autocomplétion des bibliothèques, le style de l'IDE est moche mais bon si va bien c'est OK.
+Super autocomplétion des bibliothèques, le style de l'IDE est moche mais bon s'il va bien c'est OK.
 Mais *fail* car le support du clavier est destiné uniquement au clavier QWERTY.
 
 Donc c'est reparti pour tester un nouvel IDE.
@@ -183,7 +183,7 @@ J'avais déjà installé https://atom.io[Atom] donc je regarde les plugins dispo
 - {atom-package-uri}/language-go[language-go]
 - {atom-package-uri}/go-plus[go-plus] : `apm install go-plus`
 
-`language-go` permet le support de la coloration syntaxique de Go.
+`language-go` permet le support de la coloration syntaxique de Go et fournir par défaut avec Atom.
 
 `go-plus` permet d'avoir de l'auto-complétion, le formateur officiel, du linting et donne un retour visuel des erreurs de syntaxe. Un super plugin !
 
