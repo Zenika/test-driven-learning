@@ -10,6 +10,7 @@
 :golang-doc-uri: {golang-uri}/doc
 :golang-blog: https://blog.golang.org
 :golang-github: {github-uri}/golang
+:atom-package-uri: https://atom.io/packages
 
 .Sommaire
 toc::[]
