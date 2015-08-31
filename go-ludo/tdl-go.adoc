@@ -326,6 +326,8 @@ Mon objectif est bien sur de faire ce kata en TDD avec des *baby steps*.
 
 === Description du kata
 
+[quote]
+_____
 Afficher les chiffres de 1 to 100.
 
 Pour les multiples de trois afficher `Fizz`.
@@ -333,6 +335,7 @@ Pour les multiples de trois afficher `Fizz`.
 Pour les multiples de cinq afficher `Buzz`.
 
 Pour les multiples de trois et de cinq afficher `FizzBuzz`.
+_____
 
 
 === Étape 1 - Afficher un chiffre
