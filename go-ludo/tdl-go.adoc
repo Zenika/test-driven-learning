@@ -50,7 +50,7 @@ J'ai trouvé 4 points d'entrées qui m'ont semblé pertinent :
 
 == La structure
 
-La question de base pour commencer correctement avec un langage c'est la structure d'un projet. Pour Go, il a été facile de trouver cela sur le officiel : {golang-doc-uri}/code.html
+La question de base pour commencer correctement avec un langage c'est la structure d'un projet. Pour Go, il a été facile de trouver cela sur le site officiel : {golang-doc-uri}/code.html
 
 ....
 <GOPATH>
@@ -196,7 +196,7 @@ J'ai donc arrêté mon choix sur Atom.
 
 == Le langage
 
-Maintenant, il faut mettre les mains dans cambouis !
+Maintenant, il faut mettre les mains dans le cambouis !
 
 Les commentaires sont assez classiques : `// mon commentaire` et `/* mon commentaire */`
 
@@ -263,7 +263,7 @@ Je comprends que les variables sont déclarées sous la forme :
 var foo string
 ----
 
-Et qu'il est possible, lors d'une déclaration avec assignation, utiliser une notation réduite :
+Et qu'il est possible, lors d'une déclaration avec assignation, d'utiliser une notation réduite :
 
 [source, go]
 ----
@@ -362,12 +362,12 @@ func Test_should_print_string_representation_when_passing_an_integer(t *testing.
 
 Voilà le test est écrit mais il est rouge : la fonction `Display` n'existe pas.
 
-Pour créer cette méthode je dois pouvoir passer un paramètre à une fonction et convertir un `int` et `string`.
+Pour créer cette méthode je dois pouvoir passer un paramètre à une fonction et convertir un `int` en `string`.
 
 Encore une retour à la documentation.
 
 La déclaration d'un paramètre d'une fonction se fait en écrivant le nom du paramètre puis son type.
-Il possible de définir le type de retour en ajout le type après la déclaration de la méthode.
+Il possible de définir le type de retour en ajoutant le type après la déclaration de la méthode.
 
 [source, go]
 ----
