@@ -18,7 +18,7 @@ toc::[]
 
 Go est un langage qui buzz beaucoup depuis quelques temps en grande partie à cause de {docker-uri}[Docker], j'ai donc eut l'envie de m'initier à ce langage.
 
-Je suis demandé comment commencer : faire des tutoriels, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.
+Je me suis demandé comment commencer : faire des tutoriels, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.
 
 Du coup, je suis dit pourquoi ne pas essayer de faire le kata FizzBuzz pour apprendre.
 
