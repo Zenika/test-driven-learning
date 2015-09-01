@@ -94,7 +94,7 @@ goworkspace
 
 Après cela il me fallait comprendre comment fonctionnait les tests avec Go.
 
-Je ne voulais pas rentrer trop dans le langage tant que je savais pas comment faire un test.
+Je ne voulais pas trop rentrer dans le langage tant que je savais pas comment faire un test.
 
 Une petite fouille sur le site de Go et le dépôt GitHub officiels et hop :
 
