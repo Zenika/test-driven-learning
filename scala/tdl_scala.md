@@ -24,7 +24,7 @@ Pour valider l'installation de sbt, taper dans la console les commandes suivante
 
 	scala>
 
-A l'invit de commande **scala>** taper le code suivant : 
+À l'invite de commande **scala>** taper le code suivant : 
 
 	scala> 1+1
 	res0: Int = 2
@@ -33,7 +33,7 @@ Si vous obtenez le résultat ci-dessus alors c'est que tout est en ordre et que 
 
 ### Création du projet : tdl-scala
 
-Sbt suit les mêmes convention que Maven en terme de structure de projet. Nous allons donc créer la structure minimale de répertoire pour nous permettre l'écriture d'un test.
+Sbt suit les mêmes conventions que Maven en terme de structure de projet. Nous allons donc créer la structure minimale de répertoire pour nous permettre l'écriture d'un test.
 
 Première étape création du répertoire racine du projet : **tdl-scala**
 Ensuite, il faut créer la structure (minimale) suivante :
@@ -48,7 +48,7 @@ tdl-scala/
         └── scala/
             └── <test Scala sources>
 ```
-Maintenant, il faut fournir le descripteur de projet à sbt. Ce fichier se nomme build.sbt et se trouve à la racine du projet : 
+Maintenant, il faut fournir un descripteur de projet à sbt. Ce fichier se nomme build.sbt et se trouve à la racine du projet : 
 
 ```
 tdl-scala/
@@ -91,7 +91,7 @@ La dépendance ajoutée au projet est la librairie standard permettant d'écrire
 Aujourd'hui, savoir coder c'est savoir tester son code.  Nous allons voir comment écrire un test en Scala. Pour cela nous allons utiliser la librairie **ScalaTest**. Cette librairie fournit une API très complète permettant d'écrire des tests selon une approche **Behavior-Driven Development** (BDD)
 Dans ce premier exemple, nous allons utiliser *FunSuite*. Une version très proche d'un test Junit. Nous verrons plus tard l'ensemble des possibilités de la librairie sur une approche BDD.
 
-Créez le fichier suivant : 
+Créer le fichier suivant : 
 	
 	src/test/scala/MyFirstTest.scala	
 
@@ -156,7 +156,9 @@ et on devrait voir dans la console le test se relancer automatiquement et se ter
 
 ## Conclusion
 
-Suite aux différentes étapes ci-dessus, nous avons à disposition un environnement opérationnel. Il nous permet d'écrire du code Scala, des tests et de les exécuter
+Suite aux différentes étapes ci-dessus, nous avons à disposition un environnement opérationnel. Il nous permet d'écrire du code Scala, des tests et de les exécuter. 
+La prochaine étape consistera à travailler sur un kata ce qui nous permettra d'enrichir nos connaissances sur ce language
+
 
 
 
