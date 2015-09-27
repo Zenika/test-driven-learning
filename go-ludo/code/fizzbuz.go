@@ -1,6 +1,5 @@
 package kata
 
-import "fmt"
 import (
 	"fmt"
 	"strconv"

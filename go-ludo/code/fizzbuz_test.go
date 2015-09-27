@@ -89,5 +89,3 @@ func Test_should_display_a_valid_result_when_diplay_numbers_between_1_and_100(t 
 		t.Errorf("Must display %s but return is %s", expected, rt)
 	}
 }
-
-}
