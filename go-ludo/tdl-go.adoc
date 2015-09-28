@@ -796,6 +796,6 @@ L'exploration des bibliothèques va aussi être un point important :
 - avoir une meilleure vision d'ensemble des bibliothèques internes de Go
 - trouver les bonnes bibliothèques externes pour les cas commun
 
-Je vais aussi regarder des applications existantes, des articles, et des présentations, etc  afin d'approfondir ma compréhension.
+Je vais aussi regarder des applications existantes, des articles, et des présentations, etc. afin d'approfondir ma compréhension.
 
 Je vais sûrement faire _un tour de Go_ : https://tour.golang.org/welcome/
