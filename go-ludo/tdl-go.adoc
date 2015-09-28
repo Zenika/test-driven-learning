@@ -152,8 +152,63 @@ func TestReverse(t *testing.T) { <2>
 
 Dans la documentation, il est aussi dit que les fichiers de tests doivent se terminer par `_test.go` et que chaque méthode de test doit avoir la forme `TestXXX`.
 
+=== Couverture de code
+
+Pour compléter les tests, j'avais aussi besoin de connaître la couverture du code par les tests.
+
+Après quelques recherches sur le blog de Go, j'ai trouvé cet article : {golang-blog}/cover[The cover story]
+
+Pour voir la couverture :
+
+[source, shell]
+----
+go test -cover
+----
+
+Il est possible de créer un rapport avec les statistiques de couverture du code (coverage profile) :
+
+[source, shell]
+----
+go test -coverprofile=coverage.out
+----
+
+Le flag `-coverprofile` définit automatiquement le flag `-cover` afin d'activer l'analyse de la couverture.
+
+Il est possible jouer sur les données du rapport grâce à l'option `-covermode`.
+
+....
+-covermode <option>
+....
+
+- `set`: est-ce chaque instruction est exécutée ? (par défaut)
+- `count`: combien de fois chaque instruction est exécutée ?
+- `atomic`: comme `count`, mais compte précisément dans les programmes parallélisés
+
+Pour visualiser le rapport généré pour chaque fonction :
+
+[source, shell]
+----
+go tool cover -func=coverage.out
+----
+
+Pour visualiser le rapport sous une forme plus visuelle, il est possible produire une page HTML.
+
+[source, shell]
+----
+go tool cover -html=coverage.out
+----
+
+Cette commande génère un fichier HTML dans le dossier temporaire de l'utilisateur et l'ouvre dans le navigateur par défaut.
+
+Pour voir l'aide de `tool cover` :
+
+[source, shell]
+----
+go tool cover
+----
+
 Voilà je me sens prêt à commencer.
-Je ne connais pas encore le langage mais je sais comment écrire un test !
+Je ne connais pas encore le langage mais je sais comment écrire et éxéxuter un test !
 
 
 == IDE
@@ -174,7 +229,7 @@ Je me retrouve sur le site officiel puis le GitHub et je trouve cette page :
 
 - {golang-github}/go/wiki/IDEsAndTextEditorPlugins
 
-Je décide donc de tester https://github.com/visualfc/liteide[LiteIDE].
+Je décide donc de tester {github-uri}/visualfc/liteide[LiteIDE].
 Super autocomplétion des bibliothèques, le style de l'IDE est moche mais bon s'il va bien c'est OK.
 Mais *fail* car le support du clavier est destiné uniquement au clavier QWERTY.
 
