@@ -223,7 +223,7 @@ Donc j'ouvre Brackets, IntelliJ et Eclipse à la recherche du support langage.
 
 Je ne trouve rien de très pertinent.
 
-Je suppose que VIM doit avoir un support mais n'étant pas un grand habitué de cet éditeur je décide continuer à chercher.
+Je suppose que VIM doit avoir un support mais n'étant pas un grand habitué de cet éditeur je décide de continuer à chercher.
 
 Je me retrouve sur le site officiel puis le GitHub et je trouve cette page :
 
@@ -240,7 +240,7 @@ J'avais déjà installé {atom-uri}[Atom] donc je regarde les plugins disponible
 - {atom-package-uri}/language-go[language-go]
 - {atom-package-uri}/go-plus[go-plus] : `apm install go-plus`
 
-`language-go` permet le support de la coloration syntaxique de Go et fournir par défaut avec Atom.
+`language-go` permet le support de la coloration syntaxique de Go. Fournit par défaut avec Atom.
 
 `go-plus` permet d'avoir de l'auto-complétion, le formateur officiel, du linting et donne un retour visuel des erreurs de syntaxe. Un super plugin !
 
@@ -255,7 +255,7 @@ Maintenant, il faut mettre les mains dans le cambouis !
 
 Les commentaires sont assez classiques : `// mon commentaire` et `/* mon commentaire */`
 
-Après quelques lectures de la documentation et de quelques samples, je comprends que Go est principalement un langage fonctionnel où les fonctions sont simplement exposée par le package.
+Après quelques lectures de la documentation et de quelques samples, je comprends que Go est un langage fonctionnel où les fonctions sont simplement exposée par le package.
 
 J'ai décidé de créer un premier fichier `fizzbuzz.go`.
 
@@ -309,7 +309,7 @@ Mais mon premier objectif n'était pas de faire tourner une ligne de commande ma
 
 J'ai donc gardé le premier contenu du fichier `fizzbuzz.go` et créé un nouveau fichier `fizzbuzz_test.go`.
 
-Pour cela, il me faut déclarer des variables, je regarde les sources exemples du GitHub officiel.
+Pour cela, il me faut déclarer des variables, je regarde les sources en exemples dans le GitHub officiel.
 
 Je comprends que les variables sont déclarées sous la forme :
 
@@ -356,11 +356,10 @@ J'ai simplement appelé la fonction `FizzBuzz` dans le test  et lancé le test :
 go test
 ----
 
-Et la sortie de console était plutôt positive :
+La sortie de console était plutôt positive :
 
 - mon message `Kata FizzBuzz` s'affichait bien
 - mon test échouait ce qui était mon objectif.
-
 
 ....
 Kata FizzBuzz
