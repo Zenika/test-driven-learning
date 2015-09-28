@@ -644,7 +644,7 @@ func Test_should_print_FizzBuzz_when_passing_15(t *testing.T) {
 }
 ----
 
-Première phase 'aller au vert le plus rapidement'.
+Première phase : aller au vert le plus rapidement.
 
 .fizzbuz.go
 [source, go]
@@ -694,7 +694,7 @@ func Display(number int) string {
 }
 ----
 
-Les tests sont verts mais je suis pas très fan de la répétition donc :
+Les tests sont verts mais je ne suis pas très fan de la répétition donc :
 
 .fizzbuz.go
 [source, go]
@@ -741,7 +741,7 @@ Les tests sont verts, c'est parti pour la dernière étape.
 
 === Etape 7 - de 1 à 100
 
-Il ne me reste plus qu'à traiter le fait de traiter une séquence de 1 à 100.
+Il ne me reste plus qu'à traiter une séquence de 1 à 100.
 
 Pour cela j'ajoute un test :
 
@@ -761,7 +761,7 @@ func Test_should_display_a_valid_result_when_diplay_numbers_between_1_and_100(t 
 }
 ----
 
-Le test est rouge, le code ne compile pas il faut que je modifie la méthode `FizzBuzz`.
+Le test est rouge, le code ne compile pas, il faut que je modifie la méthode `FizzBuzz`.
 
 J'ai besoin de faire un `for`, je regarde la documentation, c'est comme en Java et je ne vois pas de générateur de 'range'.
 
