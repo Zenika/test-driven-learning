@@ -20,7 +20,7 @@ toc::[]
 
 Go est un langage qui buzz beaucoup depuis quelques temps en grande partie à cause de {docker-uri}[Docker], j'ai donc eut l'envie de m'initier à ce langage.
 
-Je me suis demandé comment commencer : faire des tutoriels, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.
+Je me suis demandé comment commencer : faire des tutoriaux, souvent cela se résume à des copier-coller et finit par une connaissance très partielle.
 
 Du coup, je me suis dit pourquoi ne pas essayer de faire le kata FizzBuzz pour apprendre.
 
@@ -213,7 +213,7 @@ Je ne connais pas encore le langage mais je sais comment écrire et éxéxuter u
 
 == IDE
 
-Pour pouvoir écrire un code, un bon outil c'est important.
+Pour pouvoir écrire du code, un bon outil c'est important.
 
 Donc je suis parti à la recherche d'un IDE pour Go.
 
@@ -255,11 +255,11 @@ Maintenant, il faut mettre les mains dans le cambouis !
 
 Les commentaires sont assez classiques : `// mon commentaire` et `/* mon commentaire */`
 
-Après quelques lectures de la documentation et de quelques samples, je comprends que dans Go est principalement un langage fonctionnel où les fonctions sont simplement exposée par le package.
+Après quelques lectures de la documentation et de quelques samples, je comprends que Go est principalement un langage fonctionnel où les fonctions sont simplement exposée par le package.
 
 J'ai décidé de créer un premier fichier `fizzbuzz.go`.
 
-A l'aide de la documentation j'ai créé ceci :
+A l'aide de la documentation j'ai obtenu ceci :
 
 .fizzbuzz.go
 [source, go]
@@ -307,7 +307,7 @@ func main() {
 
 Mais mon premier objectif n'était pas de faire tourner une ligne de commande mais des tests afin de pouvoir faire le kata.
 
-J'ai donc gardé le premier contenu du fichier `fizzbuzz.go` et créé nouveau fichier `fizzbuzz_test.go`
+J'ai donc gardé le premier contenu du fichier `fizzbuzz.go` et créé un nouveau fichier `fizzbuzz_test.go`.
 
 Pour cela, il me faut déclarer des variables, je regarde les sources exemples du GitHub officiel.
 
@@ -419,7 +419,7 @@ Voilà le test est écrit mais il est rouge : la fonction `Display` n'existe pas
 
 Pour créer cette méthode je dois pouvoir passer un paramètre à une fonction et convertir un `int` en `string`.
 
-Encore une retour à la documentation.
+Encore un retour à la documentation.
 
 La déclaration d'un paramètre d'une fonction se fait en écrivant le nom du paramètre puis son type.
 Il possible de définir le type de retour en ajoutant le type après la déclaration de la méthode.
@@ -431,13 +431,13 @@ func Foo(bar int) string {
 }
 ----
 
-Le deuxième point plus compliqué car je ne vois pas comment convertir un `int` en `string`.
+Le deuxième point est plus compliqué car je ne vois pas comment convertir un `int` en `string`.
 
 Je ne trouve rien rapidement dans la documentation donc Google est mon ami.
 
 Ce n'est pas très intuitif car il faut importer le package `strconv` et utiliser la méthode `strconv.Itoa()`.
 
-Je créer la méthode `Display` dans `fizzbuz.go`.
+Je crée la méthode `Display` dans `fizzbuz.go`.
 
 .fizzbuz.go
 [source, go]
@@ -487,7 +487,7 @@ func Test_should_print_Fizz_when_passing_3(t *testing.T) {
 
 Je lance les tests (`go test`) et ce nouveau test est rouge.
 
-Je créer un code stupide mais qui fait passer le test.
+Je crée un code stupide mais qui fait passer le test.
 
 Pour cela j'ai besoin d'écrire un `if`, je l'ai déjà fait plus haut mais en copiant du code.
 
@@ -590,7 +590,7 @@ Je relance les tests (`go test`) et tous les tests sont verts, encore une victoi
 
 === Étape 5 - Multiple de 5
 
-Même travaille que pour les étapes 3 et 4.
+Même travail que pour les étapes 3 et 4.
 
 .fizzbuz_test.go
 [source, go]
@@ -628,7 +628,7 @@ Je relance les tests (`go test`) et tous les tests sont verts, encore une victoi
 
 === Étape 6 - Multiple de 3 et 5
 
-Ajout d'un nouveau test pour les multiples de trois et de cinq qui doivent transformés en "FizzBuzz".
+Ajout d'un nouveau test pour les multiples de trois et de cinq qui doivent se transformer en "FizzBuzz".
 
 .fizzbuz_test.go
 [source, go]
@@ -793,7 +793,7 @@ Pour aller plus loin, je vais devoir faire un kata plus complexe ou débuter une
 
 L'exploration des bibliothèques va aussi être un point important :
 
-- explorer les bibliothèques externes de tests comme http://goconvey.co[GoConvey] ou https://labix.org/gocheck[GoCheck] ou https://github.com/stretchr/testify[Testify]
+- explorer les bibliothèques externes de tests comme http://goconvey.co[GoConvey] ou https://labix.org/gocheck[GoCheck] ou https://github.com/stretchr/testify[Testify] ou https://github.com/axw/gocov[GoCov]
 - avoir une meilleure vision d'ensemble des bibliothèques internes de Go
 - trouver les bonnes bibliothèques externes pour les cas commun
 
